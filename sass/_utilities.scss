@@ -1,0 +1,86 @@
+.fw-sm {
+  font-weight: var(--fw-sm);
+}
+
+.fw-md {
+  font-weight: var(--fw-md);
+}
+
+.fw-lg {
+  font-weight: var(--fw-lg);
+}
+
+.md {
+  @media only screen and (max-width: $bp-tablet) {
+    text-align: center;
+  }
+}
+
+.fs-primary-heading {
+  font-size: $fs-700-1;
+  line-height: 1.1;
+  font-weight: var(--fw-lg);
+
+  @media only screen and (max-width: $bp-tablet) {
+    font-size: $fs-700-2;
+    font-weight: var(--fw-md);
+  }
+}
+
+.fs-secondary-heading {
+  font-size: $fs-600-1;
+  line-height: 1.1;
+  font-weight: var(--fw-md);
+
+  @media only screen and (max-width: $bp-tablet) {
+    font-size: $fs-600-2;
+  }
+}
+
+.fs-tertiary-heading {
+  font-size: $fs-500;
+  line-height: 1.1;
+  font-weight: var(--fw-md);
+
+  @media only screen and (max-width: $bp-tablet) {
+    font-size: $fs-500-2;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-md {
+  margin-top: 5rem;
+}
+
+.attribution {
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.container {
+  --max-width: 1440px;
+  --padding: 1.6rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+// selects every child in the div except the first child
+.flow * + * {
+  margin-top: var(--flow-space, 1.5em);
+}

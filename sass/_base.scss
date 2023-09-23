@@ -1,0 +1,103 @@
+:root {
+  --ff-primary: "Public Sans", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-sm: 300;
+  --fw-md: 400;
+  --fw-lg: 700;
+
+  --size-300: 1.6rem;
+  --size-400: 2rem;
+  --size-500: 3.8rem;
+  --size-600: 2.8rem;
+  --size-700: 3.2rem;
+  --size-800: 6.4rem;
+  --size-900: 5rem;
+}
+
+// RESPONSIVENESS
+
+$bp-desktop-large: 96.88em; //1550px
+$bp-desktop-large-2: 88.13em; //1410px
+$bp-tablet: 74.94em; //1199px
+
+$bp-phone-lg: 60.63em; //970px
+$bp-phone: 34.38em; //550px
+$bp-smallest: 24.63em; //394px
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-tablet) {
+    font-size: 65%;
+  }
+
+  @media only screen and (max-width: $bp-tablet) {
+    font-size: 50%;
+  }
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  height: 100%;
+
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: $fs-default;
+  font-family: var(--ff-body);
+  color: $clr-primary-1;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

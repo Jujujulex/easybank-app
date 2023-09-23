@@ -1,0 +1,143 @@
+.header {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  padding-block: 1.5em;
+  background-color: $clr-tertiary-2;
+
+  @media only screen and (max-width: $bp-phone-lg) {
+    padding-top: 8rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    width: 100%;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .btn {
+      @media only screen and (max-width: $bp-phone-lg) {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      padding-inline: 3rem;
+    }
+
+    .nav-logo {
+      @media only screen and (max-width: $bp-phone-lg) {
+        width: 15rem;
+        position: absolute;
+        top: 4.5rem;
+      }
+
+      @media only screen and (max-width: $bp-phone) {
+        width: 20rem;
+      }
+    }
+  }
+
+  .mobile-nav-toggle {
+    position: absolute;
+    top: 3.5rem;
+    right: 4rem;
+    z-index: 10;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0.8rem;
+
+    display: none;
+
+    width: 3.5rem;
+    aspect-ratio: 1;
+    background-image: url(../images/icon-hamburger.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &[aria-expanded="true"] {
+      background-image: url(../images/icon-close.svg);
+    }
+
+    &:focus,
+    &:active {
+      outline: 2px solid $clr-secondary-2;
+    }
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      display: block;
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      width: 4.5rem;
+    }
+
+    // mobile
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      gap: clamp(var(--size-500), 5vw, var(--size-800));
+      font-weight: var(--fw-md);
+
+      @media only screen and (max-width: $bp-phone-lg) {
+        display: grid;
+        gap: var(--size-600);
+        text-align: center;
+        font-weight: var(--fw-lg);
+      }
+    }
+
+    &__list a {
+      text-decoration: none;
+      color: $clr-secondary-1;
+      font-size: $fs-default;
+    }
+
+    &__list a:hover,
+    &__list a:focus {
+      color: $clr-primary-1;
+      font-weight: var(--fw-md);
+      opacity: 0.9;
+    }
+
+    &[data-visible] {
+      display: block;
+      margin-top: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-phone-lg) {
+      display: none;
+      position: fixed;
+      inset: 11.2rem var(--size-400) auto;
+      background: $clr-tertiary-2;
+      padding: var(--size-700);
+      margin-inline: auto;
+      z-index: 999;
+      box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+      border-radius: 0.5rem;
+      max-width: 35rem;
+    }
+  }
+
+  &[data-overlay] {
+    position: relative;
+    z-index: 999;
+  }
+
+  &[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 8rem 0 0 0;
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+  }
+}
