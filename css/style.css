@@ -160,7 +160,6 @@ svg {
 @media (min-width: 75em) and (max-width: 88.06em) {
   .hero {
     background-position: 70rem -28rem;
-    zoom: 70%;
   }
 }
 @media only screen and (max-width: 74.94em) {
@@ -570,7 +569,7 @@ svg {
 }
 .header .nav__list {
   display: flex;
-  gap: clamp(var(--size-500), 5vw, var(--size-800));
+  gap: clamp(var(--size-400), 5vw, var(--size-700));
   font-weight: var(--fw-md);
 }
 @media only screen and (max-width: 60.63em) {
