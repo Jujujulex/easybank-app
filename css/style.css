@@ -364,6 +364,11 @@ svg {
     width: 70%;
   }
 }
+@media only screen and (max-width: 60.63em) {
+  .article .article-body__list {
+    width: 90%;
+  }
+}
 .article .article-body__list-items {
   padding: 2.3rem;
   --flow-space: 1rem;
